@@ -48,17 +48,17 @@ public class Universe {
                 Cell currentCell = currentGridContent.getCellAt(x, y);
                 int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y);
                 Cell nextCell;
-                if (currentCell == Cell.LIVE_CELL) {
+                if (currentCell == com.wakaleo.gameoflife.domain.Cell.LIVE_CELL) {
                     if ((neighbourCount == 2) || (neighbourCount == 3)) {
-                        nextCell = LIVE_CELL;
+                        nextCell = com.wakaleo.gameoflife.domain.Cell.LIVE_CELL;
                     } else {
-                        nextCell = DEAD_CELL;
+                        nextCell = com.wakaleo.gameoflife.domain.Cell.DEAD_CELL;
                     }
                 } else {
                     if (neighbourCount == 3) {
-                        nextCell = LIVE_CELL;
+                        nextCell = com.wakaleo.gameoflife.domain.Cell.LIVE_CELL;
                     } else {
-                        nextCell = DEAD_CELL;
+                        nextCell = com.wakaleo.gameoflife.domain.Cell.DEAD_CELL;
                     }
                 }
                 nextGenerationContent.append(nextCell);
