@@ -35,18 +35,16 @@ public class Universe {
 
     public void createNextGeneration() {
 
-        StringBuffer nextGenerationContent = new StringBuffer();
+        final StringBuffer nextGenerationContent = new StringBuffer();
 
-        int maxRow;
-        int maxColumn;
+        final int maxRow = currentGridContent.getWidth();
+        final int maxColumn = currentGridContent.getHeight();
 
-        maxRow = currentGridContent.getWidth();
-        maxColumn = currentGridContent.getHeight();
         // TODO: simplify this code
         for (int y = 0; y < maxRow; y++) {
             for (int x = 0; x < maxColumn; x++) {
-                Cell currentCell = currentGridContent.getCellAt(x, y);
-                int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y);
+                final Cell currentCell = currentGridContent.getCellAt(x, y);
+                final int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y);
                 Cell nextCell;
                 if (currentCell == com.wakaleo.gameoflife.domain.Cell.LIVE_CELL) {
                     if ((neighbourCount == 2) || (neighbourCount == 3)) {
