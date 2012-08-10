@@ -37,14 +37,17 @@ public class Universe {
 
         StringBuffer nextGenerationContent = new StringBuffer();
 
-        int maxRow = currentGridContent.getWidth();
-        int maxColumn = currentGridContent.getHeight();
+        int maxRow;
+        int maxColumn;
+
+        maxRow = currentGridContent.getWidth();
+        maxColumn = currentGridContent.getHeight();
         // TODO: simplify this code
         for (int y = 0; y < maxRow; y++) {
             for (int x = 0; x < maxColumn; x++) {
                 Cell currentCell = currentGridContent.getCellAt(x, y);
                 int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y);
-                Cell nextCell = null;
+                Cell nextCell;
                 if (currentCell == Cell.LIVE_CELL) {
                     if ((neighbourCount == 2) || (neighbourCount == 3)) {
                         nextCell = LIVE_CELL;
